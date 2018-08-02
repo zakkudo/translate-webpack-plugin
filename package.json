@@ -1,0 +1,33 @@
+{
+  "name": "translate-webpack-plugin",
+  "version": "0.0.1",
+  "description": "A webpack plugin for generating localization files using static analysis of source files similar to gettext",
+  "keywords": [
+    "webpack",
+    "translate",
+    "i18n"
+  ],
+  "main": "src/index.js",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-jasmine": "^2.10.1",
+    "eslint-plugin-node": "^7.0.1",
+    "jest": "^23.4.2",
+    "jest-cli": "^23.4.2",
+    "jsdoc": "^3.5.5"
+  },
+  "dependencies": {
+    "deep-equal": "^1.0.1",
+    "glob": "^7.1.2",
+    "json5": "^1.0.1",
+    "y18n": "^4.0.0"
+  },
+  "scripts": {
+    "public": "scripts/publish.sh",
+    "build": "scripts/build.sh",
+    "test": "scripts/test.sh",
+    "cover": "scripts/cover.sh",
+    "lint": "scripts/lint.sh"
+  }
+}
