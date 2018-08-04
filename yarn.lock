@@ -16,6 +16,15 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
+"@zakkudo/translation-static-analyzer@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@zakkudo/translation-static-analyzer/-/translation-static-analyzer-0.0.2.tgz#4a9419673a939657c86aac74e2fbc2b44b0336af"
+  dependencies:
+    deep-equal "^1.0.1"
+    glob "^7.1.2"
+    json5 "^1.0.1"
+    y18n "^4.0.0"
+
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -3332,15 +3341,6 @@ tr46@^1.0.1:
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-1.0.1.tgz#a8b13fd6bfd2489519674ccde55ba3693b706d09"
   dependencies:
     punycode "^2.1.0"
-
-translation-static-analyzer@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/translation-static-analyzer/-/translation-static-analyzer-0.0.1.tgz#11a6fb5fb9ee23b4a48c3405bc6dc8e19c5774ea"
-  dependencies:
-    deep-equal "^1.0.1"
-    glob "^7.1.2"
-    json5 "^1.0.1"
-    y18n "^4.0.0"
 
 trim-right@^1.0.1:
   version "1.0.1"
