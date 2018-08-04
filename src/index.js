@@ -1,4 +1,4 @@
-const TranslationStaticAnalyzer = require('translation-static-analyzer');
+const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer');
 
 module.exports = class TranslateWebpackPlugin {
     constructor(options) {
