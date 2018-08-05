@@ -4,6 +4,6 @@ set -e
 
 yarn build
 yarn document
-yarn cover
+#yarn cover Nothing to test yet!
 
 yarn publish --access public
