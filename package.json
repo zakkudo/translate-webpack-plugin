@@ -1,6 +1,6 @@
 {
   "name": "@zakkudo/translate-webpack-plugin",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A webpack plugin for generating localization files using static analysis of source files similar to gettext",
   "keywords": [
     "webpack",
@@ -11,6 +11,7 @@
   "files": [
     "build/**/*"
   ],
+  "repository": "github:zakkudo/translate-webpack-plugin",
   "license": "BSD-3-Clause",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.56",
