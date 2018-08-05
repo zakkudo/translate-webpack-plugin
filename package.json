@@ -7,7 +7,7 @@
     "translate",
     "i18n"
   ],
-  "main": "src/index.js",
+  "main": "main/index.js",
   "license": "BSD-3-Clause",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.56",
