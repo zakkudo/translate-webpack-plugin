@@ -1,0 +1,21 @@
+{
+	"source": {
+		"includePattern": "src/.+\\.js?$",
+        "include": "src",
+        "excludePattern": "(test.js|TestHelper.js)$"
+
+	},
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": false,
+        "dictionaries": ["jsdoc", "closure"]
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "opts": {
+        "destination": "./documentation",
+        "recurse": true,
+        "encoding": "utf8"
+    }
+}
