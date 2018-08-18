@@ -1,0 +1,13 @@
+language: node_js
+cache: yarn
+node_js:
+  - "7"
+  - "8"
+  - "9"
+  - "10"
+install:
+    - yarn add codecov
+script:
+  - yarn cover
+  - cat coverage/lcov.info | ./node_modules/.bin/coveralls
+  - ./node_modules/.bin/codecov

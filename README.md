@@ -3,6 +3,9 @@
 ## TranslateWebpackPlugin
 A webpack plugin for scanning javscript files to build translation mappings in json automatically.
 
+[![Build Status](https://travis-ci.org/zakkudo/translate-webpack-plugin.svg?branch=master)](https://travis-ci.org/zakkudo/translate-webpack-plugin)
+[![Coverage Status](https://coveralls.io/repos/github/zakkudo/translate-webpack-plugin/badge.svg?branch=master)](https://coveralls.io/github/zakkudo/translate-webpack-plugin?branch=master)
+
 Why use this?
 
 - You no longer have to manage hierarchies of translations
@@ -30,7 +33,7 @@ no fuss and apply the translations.
 ```js
 const TranslateWebpackPlugin = require('@zakkudo/translate-webpack-plugin');
 webpackConfig.plugins.push(new TranslateWebpackPlugin({
-    files: 'src/**\/*.js', // Analyzes all javscript files in the src directory
+    files: 'src/**/*.js', // Analyzes all javscript files in the src directory
     debug: true, // Enables verbose output
     locales: ['fr', 'en'], // generate a locales/fr.json as well as a locales/en.json
     target: 'src' // Each page in the folder will get it's own subset of translations
@@ -40,7 +43,7 @@ webpackConfig.plugins.push(new TranslateWebpackPlugin({
 ```js
 const TranslateWebpackPlugin = require('@zakkudo/translate-webpack-plugin');
 webpackConfig.plugins.push(new TranslateWebpackPlugin({
-    files: 'src/**\/*.js', // Analyzes all javscript files in the src directory
+    files: 'src/**/*.js', // Analyzes all javscript files in the src directory
     debug: true, // Enables verbose output
     locales: ['fr', 'en'], // generate a locales/fr.json as well as a locales/en.json
     target: 'src/pages/*' // Each page in the folder will get it's own subset of translations

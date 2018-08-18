@@ -4,6 +4,9 @@ const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer'
 /**
  * A webpack plugin for scanning javscript files to build translation mappings in json automatically.
  *
+ * [![Build Status](https://travis-ci.org/zakkudo/translate-webpack-plugin.svg?branch=master)](https://travis-ci.org/zakkudo/translate-webpack-plugin)
+ * [![Coverage Status](https://coveralls.io/repos/github/zakkudo/translate-webpack-plugin/badge.svg?branch=master)](https://coveralls.io/github/zakkudo/translate-webpack-plugin?branch=master)
+ *
  * Why use this?
  *
  * - You no longer have to manage hierarchies of translations
