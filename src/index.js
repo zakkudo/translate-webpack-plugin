@@ -109,8 +109,8 @@ class TranslateWebpackPlugin {
      */
     constructor(options) {
         this.analyzer = new TranslationStaticAnalyzer(options);
-        const templatesDirectory = this.analyzer.templatesDirectory;
-        const templatesFilePattern = path.resolve(templatesDirectory, '*.json');
+        const templateDirectory = this.analyzer.templateDirectory;
+        const templatesFilePattern = path.resolve(templateDirectory, '*.json');
 
         this.watcher = chokidar.watch(templatesFilePattern)
             .on('add', writeTemplates.bind(this))
