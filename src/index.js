@@ -4,8 +4,19 @@ const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer'
 /**
  * A webpack plugin for scanning javscript files to build translation mappings in json automatically.
  *
- * [![Build Status](https://travis-ci.org/zakkudo/translate-webpack-plugin.svg?branch=master)](https://travis-ci.org/zakkudo/translate-webpack-plugin)
- * [![Coverage Status](https://coveralls.io/repos/github/zakkudo/translate-webpack-plugin/badge.svg?branch=master)](https://coveralls.io/github/zakkudo/translate-webpack-plugin?branch=master)
+ * <p>
+ * <a href="https://travis-ci.org/zakkudo/translate-webpack-plugin">
+ *     <img src="https://travis-ci.org/zakkudo/translate-webpack-plugin.svg?branch=master"
+ *          alt="Build Status" /></a>
+ * <a href="https://coveralls.io/github/zakkudo/translate-webpack-plugin?branch=master">
+ *     <img src="https://coveralls.io/repos/github/zakkudo/translate-webpack-plugin/badge.svg?branch=master"
+ *          alt="Coverage Status" /></a>
+ * <a href="https://snyk.io/test/github/zakkudo/translate-webpack-plugin">
+ *     <img src="https://snyk.io/test/github/zakkudo/translate-webpack-plugin/badge.svg"
+ *          alt="Known Vulnerabilities"
+ *          data-canonical-src="https://snyk.io/test/github/zakkudo/translate-webpack-plugin"
+ *          style="max-width:100%;" /></a>
+ * </p>
  *
  * Why use this?
  *
@@ -13,7 +24,8 @@ const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer'
  * - Templates are automatically generated for the translators
  * - The translations are noted if they are new, unused and what files
  * - It allows splitting the translations easily for dynamic imports to allow sliced loading
- * - Any string wrapped in `__()` or `__n()`, will be picked up as a translatable making usage extremely easy for developers
+ * - Any string wrapped in `__()` or `__n()`, will be picked up as a
+ *   translatable making usage extremely easy for developers
  *
  * What does it do?
  *
