@@ -7,7 +7,7 @@ module.exports = class TranslationStaticAnalyzerMock {
         this.resetMock();
     }
 
-    get templatesDirectory() {
+    get templateDirectory() {
         return 'test template directory';
     }
 

@@ -129,7 +129,8 @@ describe('TranslateWebpackPlugin', () => {
 
             listeners.get('add')();
 
-            expect(plugin.analyzer.write.mock.calls).toEqual([]);
+            // In practice in webpack on macOS this only gets called once
+            expect(plugin.analyzer.write.mock.calls).toEqual([[]]);
         });
     });
 });
