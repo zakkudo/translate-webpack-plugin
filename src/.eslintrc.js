@@ -4,7 +4,8 @@ module.exports = {
         "plugin:node/recommended"
     ],
     "env": {
-        "jasmine": true
+        "jasmine": true,
+        "jest": true
     },
     "plugins": [
         "jasmine"

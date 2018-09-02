@@ -1,4 +1,42 @@
+const path = require('path');
+var chokidar = require('chokidar');
 const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer');
+
+/**
+ * @private
+ */
+function writeTemplates() {
+    if (!this.updateIsFromSourceFiles) {
+        this.analyzer.write();
+    }
+    this.updateIsFromSourceFiles = false;
+}
+
+/**
+ * Class description
+ */
+class TranslateWebpackPlugin {
+    constructor(options) {
+        this.analyzer = new TranslationStaticAnalyzer(options);
+        const templatesDirectory = this.analyzer.templatesDirectory;
+        const templatesFilePattern = path.resolve(templatesDirectory, '*.json');
+
+        this.watcher = chokidar.watch(templatesFilePattern)
+            .on('add', writeTemplates.bind(this))
+            .on('change', writeTemplates.bind(this))
+            .on('unlink', writeTemplates.bind(this));
+    }
+
+    apply(compiler) {
+        compiler.hooks.watchRun.tap("TranslateWebpackPlugin", (compiler) => {
+            const {watcher = {}} = compiler.watchFileSystem || {};
+            const mtimes = watcher.mtimes || {};
+
+            this.analyzer.update(Object.keys(mtimes));
+            this.updateIsFromSourceFiles = true;
+        });
+    }
+}
 
 
 /**
@@ -88,17 +126,4 @@ const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer'
  *
  * @module TranslateWebpackPlugin
  */
-module.exports = class TranslateWebpackPlugin {
-    constructor(options) {
-        this.analyzer = new TranslationStaticAnalyzer(options);
-    }
-
-    apply(compiler) {
-        compiler.hooks.watchRun.tap("TranslateWebpackPlugin", (compiler) => {
-            const {watcher= {}} = compiler.watchFileSystem;
-            const mtimes = watcher.mtimes || {};
-
-            this.analyzer.update(Object.keys(mtimes));
-        });
-    }
-}
+module.exports = TranslateWebpackPlugin;
