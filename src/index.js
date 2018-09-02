@@ -1,44 +1,3 @@
-const path = require('path');
-var chokidar = require('chokidar');
-const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer');
-
-/**
- * @private
- */
-function writeTemplates() {
-    if (!this.updateIsFromSourceFiles) {
-        this.analyzer.write();
-    }
-    this.updateIsFromSourceFiles = false;
-}
-
-/**
- * Class description
- */
-class TranslateWebpackPlugin {
-    constructor(options) {
-        this.analyzer = new TranslationStaticAnalyzer(options);
-        const templatesDirectory = this.analyzer.templatesDirectory;
-        const templatesFilePattern = path.resolve(templatesDirectory, '*.json');
-
-        this.watcher = chokidar.watch(templatesFilePattern)
-            .on('add', writeTemplates.bind(this))
-            .on('change', writeTemplates.bind(this))
-            .on('unlink', writeTemplates.bind(this));
-    }
-
-    apply(compiler) {
-        compiler.hooks.watchRun.tap("TranslateWebpackPlugin", (compiler) => {
-            const {watcher = {}} = compiler.watchFileSystem || {};
-            const mtimes = watcher.mtimes || {};
-
-            this.analyzer.update(Object.keys(mtimes));
-            this.updateIsFromSourceFiles = true;
-        });
-    }
-}
-
-
 /**
  * A webpack plugin for scanning javscript files to build translation mappings in json automatically.
  *
@@ -126,4 +85,52 @@ class TranslateWebpackPlugin {
  *
  * @module TranslateWebpackPlugin
  */
+
+const path = require('path');
+var chokidar = require('chokidar');
+const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer');
+
+/**
+ * @private
+ */
+function writeTemplates() {
+    if (!this.updateIsFromSourceFiles) {
+        this.analyzer.write();
+    }
+    this.updateIsFromSourceFiles = false;
+}
+
+/**
+ * Class description
+ */
+class TranslateWebpackPlugin {
+    /**
+     * @param {Object} options - The options
+     */
+    constructor(options) {
+        this.analyzer = new TranslationStaticAnalyzer(options);
+        const templatesDirectory = this.analyzer.templatesDirectory;
+        const templatesFilePattern = path.resolve(templatesDirectory, '*.json');
+
+        this.watcher = chokidar.watch(templatesFilePattern)
+            .on('add', writeTemplates.bind(this))
+            .on('change', writeTemplates.bind(this))
+            .on('unlink', writeTemplates.bind(this));
+    }
+
+    /**
+     * The apply method used by the webpack plugin system to hint source code changes
+     * @param {Object} compiler - The compiler object
+     */
+    apply(compiler) {
+        compiler.hooks.watchRun.tap("TranslateWebpackPlugin", (compiler) => {
+            const {watcher = {}} = compiler.watchFileSystem || {};
+            const mtimes = watcher.mtimes || {};
+
+            this.analyzer.update(Object.keys(mtimes));
+            this.updateIsFromSourceFiles = true;
+        });
+    }
+}
+
 module.exports = TranslateWebpackPlugin;

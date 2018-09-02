@@ -85,3 +85,39 @@ translator.setLocale('ja'); //Tell the translator to use it
 const translated = translator.__('I love fish'); //Translate!
 const translated = translator.__n('There is a duck in the pond.', 'There are %d ducks in the pond', 3); //Translate!
 ```
+
+* [TranslateWebpackPlugin](#module_TranslateWebpackPlugin)
+    * [~TranslateWebpackPlugin](#module_TranslateWebpackPlugin..TranslateWebpackPlugin)
+        * [new TranslateWebpackPlugin(options)](#new_module_TranslateWebpackPlugin..TranslateWebpackPlugin_new)
+        * [.apply(compiler)](#module_TranslateWebpackPlugin..TranslateWebpackPlugin+apply)
+
+<a name="module_TranslateWebpackPlugin..TranslateWebpackPlugin"></a>
+
+### TranslateWebpackPlugin~TranslateWebpackPlugin
+Class description
+
+**Kind**: inner class of [<code>TranslateWebpackPlugin</code>](#module_TranslateWebpackPlugin)  
+
+* [~TranslateWebpackPlugin](#module_TranslateWebpackPlugin..TranslateWebpackPlugin)
+    * [new TranslateWebpackPlugin(options)](#new_module_TranslateWebpackPlugin..TranslateWebpackPlugin_new)
+    * [.apply(compiler)](#module_TranslateWebpackPlugin..TranslateWebpackPlugin+apply)
+
+<a name="new_module_TranslateWebpackPlugin..TranslateWebpackPlugin_new"></a>
+
+#### new TranslateWebpackPlugin(options)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>Object</code> | The options |
+
+<a name="module_TranslateWebpackPlugin..TranslateWebpackPlugin+apply"></a>
+
+#### translateWebpackPlugin.apply(compiler)
+The apply method used by the webpack plugin system to hint source code changes
+
+**Kind**: instance method of [<code>TranslateWebpackPlugin</code>](#module_TranslateWebpackPlugin..TranslateWebpackPlugin)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| compiler | <code>Object</code> | The compiler object |
+

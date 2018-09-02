@@ -33,7 +33,7 @@
         "regenerator-runtime": "^0.12.1"
     },
     "dependencies": {
-        "@zakkudo/translation-static-analyzer": "^0.0.13",
+        "@zakkudo/translation-static-analyzer": "../translation-static-analyzer/build/",
         "chokidar": "^2.0.4"
     },
     "scripts": {
