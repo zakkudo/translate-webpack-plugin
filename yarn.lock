@@ -614,8 +614,9 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@zakkudo/translation-static-analyzer@../translation-static-analyzer/build/":
-  version "0.0.12"
+"@zakkudo/translation-static-analyzer@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@zakkudo/translation-static-analyzer/-/translation-static-analyzer-0.0.13.tgz#4de3f264249c1c15e7f6b09417ce18ec5106c89f"
   dependencies:
     deep-equal "^1.0.1"
     fs-extra "^7.0.0"
