@@ -46,8 +46,22 @@
  *     files: 'src/**\/*.js', // Analyzes all javscript files in the src directory
  *     debug: true, // Enables verbose output
  *     locales: ['fr', 'en'], // generate a locales/fr.json as well as a locales/en.json
- *     target: 'src' // Each page in the folder will get it's own subset of translations
+ *     target: 'src' // Consolidate all of the localizations into src
  * }));
+ *
+ * File Structure
+ * ├── locales <- Your translators translate this
+ * │   ├── en.json
+ * │   └── fr.json
+ * └── src
+ *     ├── .locales <- Auto generated, should probably be added to .gitignore
+ *     │   ├── en.json
+ *     │   └── fr.json
+ *     └── pages
+ *         ├── About
+ *         │   └── index.js
+ *         └── Search
+ *             └── index.js
  *
  *
  * @example <caption>Usage for splitting transaltions between dynamically imported pages of a web app</caption>
@@ -58,6 +72,23 @@
  *     locales: ['fr', 'en'], // generate a locales/fr.json as well as a locales/en.json
  *     target: 'src/pages/*' // Each page in the folder will get it's own subset of translations
  * }));
+ *
+ * File Structure
+ * ├── locales <- Your translators translate this
+ * │   ├── en.json
+ * │   └── fr.json
+ * └── src
+ *     └── pages
+ *         ├── About
+ *         │   ├── .locales <- Auto generated, should probably be added to .gitignore
+ *         │   │   ├── en.json
+ *         │   │   └── fr.json
+ *         │   └── index.js
+ *         └── Search
+ *             ├── .locales <- Auto generated, should probably be added to .gitignore
+ *             │   ├── en.json
+ *             │   └── fr.json
+ *             └── index.js
  *
  *
  * @example <caption>Generated translation templates</caption>
@@ -102,7 +133,14 @@ function writeTemplates() {
  */
 class TranslateWebpackPlugin {
     /**
-     * @param {Object} options - The options
+     * @param {Object} options - The modifiers for how the analyzer is run
+     * @param {String} options.files - A glob of the files to pull translations from
+     * @param {Boolean} [options.debug = false] - Show debugging information in the console
+     * @param {Array<String>} [options.locales = []] - The locales to generate (eg fr, ja_JP, en)
+     * @param {String} [options.templates = 'locales'] - The location to store
+     * the translator translatable templates for each language
+     * @param {String} [options.target] - Where to write the final translations, which can be split between
+     * multiple directories for modularity.
      */
     constructor(options) {
         this.analyzer = new TranslationStaticAnalyzer(options);
