@@ -94,10 +94,7 @@ const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer'
  * @private
  */
 function writeTemplates() {
-    if (!this.updateIsFromSourceFiles) {
-        this.analyzer.write();
-    }
-    this.updateIsFromSourceFiles = false;
+    this.analyzer.write();
 }
 
 /**
@@ -128,7 +125,6 @@ class TranslateWebpackPlugin {
             const mtimes = watcher.mtimes || {};
 
             this.analyzer.update(Object.keys(mtimes));
-            this.updateIsFromSourceFiles = true;
         });
     }
 }
