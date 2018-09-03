@@ -4,7 +4,7 @@ set -e
 
 yarn build
 yarn document
-yarn cover Nothing to test yet!
+yarn cover
 
 cp README.md build/README.md
 cp package.json build/package.json
