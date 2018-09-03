@@ -39,7 +39,9 @@ yarn add @zakkudo/translate-webpack-plugin
 ```
 
 Also consider `@zakkudo/translator` for a library that can read the localization with
-no fuss and apply the translations.
+no fuss and apply the translations. See the
+[Polymer 3 Starter Project](https://github.com/zakkudo/polymer-3-starter-project)
+for an example of using this library.
 
 **Example** *(Usage for just translating everything in a project)*  
 ```js
