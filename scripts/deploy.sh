@@ -2,11 +2,17 @@
 
 set -e
 
-yarn build
-yarn document
-yarn cover
+CURRENT_DIR=$(pwd)
+PROJECT_DIR=$(git rev-parse --show-toplevel)
 
-cp README.md build/README.md
-cp package.json build/package.json
+cd $PROJECT_DIR
+
+./scripts/cover.sh
+./scripts/document.sh
+./scripts/build.sh
+
+yarn version
+
+./scripts/build.sh
 
 yarn publish --access public --cwd build --no-git-tag-version

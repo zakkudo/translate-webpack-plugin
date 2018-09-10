@@ -148,6 +148,7 @@ File Structure
             └── index.js
 ```
 
+
 ### Configure the plugin for a split `.locales` directory
 ``` javascript
 module.exports = {
@@ -189,52 +190,3 @@ package thinly wraps
 no fuss and apply the translations.
 - [Polymer 3 Starter Project](https://github.com/zakkudo/polymer-3-starter-project)
 is an example project using this library.
-
-## API
-
-<a name="module_TranslateWebpackPlugin"></a>
-
-## TranslateWebpackPlugin
-
-* [TranslateWebpackPlugin](#module_TranslateWebpackPlugin)
-    * [~TranslateWebpackPlugin](#module_TranslateWebpackPlugin..TranslateWebpackPlugin)
-        * [new TranslateWebpackPlugin(options)](#new_module_TranslateWebpackPlugin..TranslateWebpackPlugin_new)
-        * [.apply(compiler)](#module_TranslateWebpackPlugin..TranslateWebpackPlugin+apply)
-
-<a name="module_TranslateWebpackPlugin..TranslateWebpackPlugin"></a>
-
-### TranslateWebpackPlugin~TranslateWebpackPlugin
-Plugin for analyzing javascript source files, extracting the translations, and converting them into
-localization templates.
-
-**Kind**: Exported class
-
-* [~TranslateWebpackPlugin](#module_TranslateWebpackPlugin..TranslateWebpackPlugin)
-    * [new TranslateWebpackPlugin(options)](#new_module_TranslateWebpackPlugin..TranslateWebpackPlugin_new)
-    * [.apply(compiler)](#module_TranslateWebpackPlugin..TranslateWebpackPlugin+apply)
-
-<a name="new_module_TranslateWebpackPlugin..TranslateWebpackPlugin_new"></a>
-
-#### new TranslateWebpackPlugin(options)
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| options | <code>Object</code> |  | The modifiers for how the analyzer is run |
-| options.files | <code>String</code> |  | A [glob pattern](https://www.npmjs.com/package/glob) of the files to pull translations from |
-| [options.debug] | <code>Boolean</code> | <code>false</code> | Show debugging information in the console |
-| [options.locales] | <code>Array.&lt;String&gt;</code> | <code>[]</code> | The locales to generate (eg fr, ja_JP, en) |
-| [options.templates] | <code>String</code> |  | The location to store the translator translatable templates for each language. Defaults to making a `locales` directory in the current working directory |
-| [options.target] | <code>String</code> |  | Where to write the final translations, which can be split between multiple directories for modularity. If there are no targets, no `.locales` directory will be generated anywhere. |
-
-<a name="module_TranslateWebpackPlugin..TranslateWebpackPlugin+apply"></a>
-
-#### translateWebpackPlugin.apply(compiler)
-Method called by the webpack plugin system during watch to inform the plugin when
-some files have been updated.
-
-**Kind**: instance method of [<code>TranslateWebpackPlugin</code>](#module_TranslateWebpackPlugin..TranslateWebpackPlugin)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| compiler | <code>Object</code> | The webpack compiler object |
-
