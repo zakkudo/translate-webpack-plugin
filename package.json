@@ -14,14 +14,19 @@
     "files": [
         "*"
     ],
+    "engines": {
+        "node": ">=6.0.0 <7.0.0 || >=8.0.0"
+    },
     "repository": "github:zakkudo/translate-webpack-plugin",
     "license": "BSD-3-Clause",
     "devDependencies": {
         "@babel/cli": "^7.0.0-beta.56",
         "@babel/core": "^7.0.0-beta.56",
+        "@babel/plugin-transform-runtime": "^7.0.0",
         "@babel/preset-env": "^7.0.0-beta.56",
         "babel-core": "^7.0.0-0",
         "babel-jest": "^23.4.2",
+        "babel-plugin-transform-undefined-to-void": "^6.9.4",
         "coveralls": "^3.0.2",
         "eslint": "^4.19.1",
         "eslint-plugin-jasmine": "^2.10.1",
@@ -29,11 +34,11 @@
         "jest": "^23.4.2",
         "jest-cli": "^23.4.2",
         "jsdoc": "^3.5.5",
-        "jsdoc-to-markdown": "^4.0.1",
-        "regenerator-runtime": "^0.12.1"
+        "jsdoc-to-markdown": "^4.0.1"
     },
     "dependencies": {
-        "@zakkudo/translation-static-analyzer": "^0.0.15",
+        "@babel/runtime-corejs2": "^7.0.0",
+        "@zakkudo/translation-static-analyzer": "^0.0.16",
         "chokidar": "^2.0.4"
     },
     "scripts": {
