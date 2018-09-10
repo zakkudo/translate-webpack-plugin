@@ -6,7 +6,7 @@ A webpack plugin for scanning javscript files to build translation mappings in j
 [![Coverage Status](https://coveralls.io/repos/github/zakkudo/translate-webpack-plugin/badge.svg?branch=master)](https://coveralls.io/github/zakkudo/translate-webpack-plugin?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/zakkudo/translate-webpack-plugin/badge.svg)](https://snyk.io/test/github/zakkudo/translate-webpack-plugin)
 [![Node](https://img.shields.io/node/v/@zakkudo/translate-webpack-plugin.svg)](https://nodejs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/npm/l/@zakkudo/translate-webpack-plugin.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Why use this?
 
