@@ -6,7 +6,7 @@ A webpack plugin for scanning javscript files to build translation mappings in j
 [![Coverage Status](https://coveralls.io/repos/github/zakkudo/translate-webpack-plugin/badge.svg?branch=master)](https://coveralls.io/github/zakkudo/translate-webpack-plugin?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/zakkudo/translate-webpack-plugin/badge.svg)](https://snyk.io/test/github/zakkudo/translate-webpack-plugin)
 [![Node](https://img.shields.io/node/v/@zakkudo/translate-webpack-plugin.svg)](https://nodejs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/npm/l/@zakkudo/translate-webpack-plugin.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Why use this?
 
@@ -192,28 +192,21 @@ is an example project using this library.
 
 ## API
 
-<a name="module_TranslateWebpackPlugin"></a>
+<a name="module_@zakkudo/translate-webpack-plugin"></a>
 
-## TranslateWebpackPlugin
+<a name="module_@zakkudo/translate-webpack-plugin..TranslateWebpackPlugin"></a>
 
-* [TranslateWebpackPlugin](#module_TranslateWebpackPlugin)
-    * [~TranslateWebpackPlugin](#module_TranslateWebpackPlugin..TranslateWebpackPlugin)
-        * [new TranslateWebpackPlugin(options)](#new_module_TranslateWebpackPlugin..TranslateWebpackPlugin_new)
-        * [.apply(compiler)](#module_TranslateWebpackPlugin..TranslateWebpackPlugin+apply)
-
-<a name="module_TranslateWebpackPlugin..TranslateWebpackPlugin"></a>
-
-### TranslateWebpackPlugin~TranslateWebpackPlugin
+### @zakkudo/translate-webpack-plugin~TranslateWebpackPlugin ⏏
 Plugin for analyzing javascript source files, extracting the translations, and converting them into
 localization templates.
 
 **Kind**: Exported class
 
-* [~TranslateWebpackPlugin](#module_TranslateWebpackPlugin..TranslateWebpackPlugin)
-    * [new TranslateWebpackPlugin(options)](#new_module_TranslateWebpackPlugin..TranslateWebpackPlugin_new)
-    * [.apply(compiler)](#module_TranslateWebpackPlugin..TranslateWebpackPlugin+apply)
+* [~TranslateWebpackPlugin](#module_@zakkudo/translate-webpack-plugin..TranslateWebpackPlugin)
+    * [new TranslateWebpackPlugin(options)](#new_module_@zakkudo/translate-webpack-plugin..TranslateWebpackPlugin_new)
+    * [.apply(compiler)](#module_@zakkudo/translate-webpack-plugin..TranslateWebpackPlugin+apply)
 
-<a name="new_module_TranslateWebpackPlugin..TranslateWebpackPlugin_new"></a>
+<a name="new_module_@zakkudo/translate-webpack-plugin..TranslateWebpackPlugin_new"></a>
 
 #### new TranslateWebpackPlugin(options)
 
@@ -226,13 +219,13 @@ localization templates.
 | [options.templates] | <code>String</code> |  | The location to store the translator translatable templates for each language. Defaults to making a `locales` directory in the current working directory |
 | [options.target] | <code>String</code> |  | Where to write the final translations, which can be split between multiple directories for modularity. If there are no targets, no `.locales` directory will be generated anywhere. |
 
-<a name="module_TranslateWebpackPlugin..TranslateWebpackPlugin+apply"></a>
+<a name="module_@zakkudo/translate-webpack-plugin..TranslateWebpackPlugin+apply"></a>
 
 #### translateWebpackPlugin.apply(compiler)
 Method called by the webpack plugin system during watch to inform the plugin when
 some files have been updated.
 
-**Kind**: instance method of [<code>TranslateWebpackPlugin</code>](#module_TranslateWebpackPlugin..TranslateWebpackPlugin)  
+**Kind**: instance method of [<code>TranslateWebpackPlugin</code>](#module_@zakkudo/translate-webpack-plugin..TranslateWebpackPlugin)  
 
 | Param | Type | Description |
 | --- | --- | --- |
