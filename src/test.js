@@ -17,6 +17,10 @@ describe('TranslateWebpackPlugin', () => {
             locales: ['fr', 'en'],
             target: 'src/pages/*'
         });
+
+        expect(plugin.analyzer.write.mock.calls).toEqual([]);
+        expect(plugin.analyzer.read.mock.calls).toEqual([]);
+        expect(plugin.analyzer.update.mock.calls).toEqual([]);
     });
 
     it('applies the file updates', () => {
@@ -76,6 +80,7 @@ describe('TranslateWebpackPlugin', () => {
         callback(compiler);
     });
 
+
     describe('watch', () => {
         it('updates the templates when one is modified', () => {
             const plugin = new TranslateWebpackPlugin({
@@ -84,23 +89,42 @@ describe('TranslateWebpackPlugin', () => {
                 locales: ['fr', 'en'],
                 target: 'src/pages/*'
             });
-
+            const tapMock = jest.fn();
             const compiler = {
                 hooks: {
                     watchRun: {
-                        tap: jest.fn()
+                        tap: tapMock
                     }
                 }
             };
 
-            const listeners = new Map(chokidar.watch.mock.results[0].value.on.mock.calls);
+            // On construction, none of the io function shsould be called
+            expect(plugin.analyzer.update.mock.calls).toEqual([]);
+            expect(plugin.analyzer.read.mock.calls).toEqual([]);
+            expect(plugin.analyzer.write.mock.calls).toEqual([]);
 
+            plugin.apply(compiler); // Initializes the chokidar watch
+
+            // Update is immediately called when apply is called
+            expect(plugin.analyzer.update.mock.calls).toEqual([[]]);
+            expect(plugin.analyzer.read.mock.calls).toEqual([]);
+            expect(plugin.analyzer.write.mock.calls).toEqual([]);
+
+            //Initialize the watch
+            const update = tapMock.mock.calls[0][1];
+            update(compiler);
+            const listeners = new Map(chokidar.watch.mock.results[0].value.on.mock.calls);
             listeners.get('add')();
 
+            update(compiler);
+
+            // Standard watch update
+            expect(plugin.analyzer.update.mock.calls).toEqual([[], [[]]]);
+            expect(plugin.analyzer.read.mock.calls).toEqual([]);
             expect(plugin.analyzer.write.mock.calls).toEqual([[]]);
         });
 
-        it('does nothing when udpate is part of source code change', () => {
+        it('does nothing when update is part of source code change', () => {
             const plugin = new TranslateWebpackPlugin({
                 files: 'src/**/*.js',
                 debug: true,
@@ -129,7 +153,6 @@ describe('TranslateWebpackPlugin', () => {
 
             listeners.get('add')();
 
-            // In practice in webpack on macOS this only gets called once
             expect(plugin.analyzer.write.mock.calls).toEqual([[]]);
         });
     });

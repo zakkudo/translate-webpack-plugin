@@ -1,5 +1,5 @@
 /**
- * @module TranslateWebpackPlugin
+ * @module @zakkudo/translate-webpack-plugin
  */
 
 const path = require('path');
@@ -11,6 +11,27 @@ const TranslationStaticAnalyzer = require('@zakkudo/translation-static-analyzer'
  */
 function writeTemplates() {
     this.analyzer.write();
+}
+
+/**
+ * @private
+ */
+function update(compiler) {
+    const {watcher = {}} = compiler.watchFileSystem || {};
+    const mtimes = watcher.mtimes || {};
+
+    if (!this.watcher) {
+        const templateDirectory = this.analyzer.templateDirectory;
+        const templatesFilePattern = path.resolve(templateDirectory, '*.json');
+
+        this.watcher = chokidar.watch(templatesFilePattern)
+            .on('add', writeTemplates.bind(this))
+            .on('change', writeTemplates.bind(this))
+            .on('unlink', writeTemplates.bind(this));
+
+    } else {
+        this.analyzer.update(Object.keys(mtimes));
+    }
 }
 
 /**
@@ -32,13 +53,6 @@ class TranslateWebpackPlugin {
      */
     constructor(options) {
         this.analyzer = new TranslationStaticAnalyzer(options);
-        const templateDirectory = this.analyzer.templateDirectory;
-        const templatesFilePattern = path.resolve(templateDirectory, '*.json');
-
-        this.watcher = chokidar.watch(templatesFilePattern)
-            .on('add', writeTemplates.bind(this))
-            .on('change', writeTemplates.bind(this))
-            .on('unlink', writeTemplates.bind(this));
     }
 
     /**
@@ -47,12 +61,11 @@ class TranslateWebpackPlugin {
      * @param {Object} compiler - The webpack compiler object
      */
     apply(compiler) {
-        compiler.hooks.watchRun.tap("TranslateWebpackPlugin", (compiler) => {
-            const {watcher = {}} = compiler.watchFileSystem || {};
-            const mtimes = watcher.mtimes || {};
+        // Gets called on build and watch. Makes sure there are initial locales for compile
+        this.analyzer.update();
 
-            this.analyzer.update(Object.keys(mtimes));
-        });
+        // Register the update callback. The callback is only called on watch.
+        compiler.hooks.watchRun.tap("TranslateWebpackPlugin", update.bind(this));
     }
 }
 
