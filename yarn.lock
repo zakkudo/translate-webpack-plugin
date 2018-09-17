@@ -629,9 +629,9 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@zakkudo/translation-static-analyzer@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/@zakkudo/translation-static-analyzer/-/translation-static-analyzer-0.0.16.tgz#4ed42efece61cdc4b44391d2aebc36b4c2d94655"
+"@zakkudo/translation-static-analyzer@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@zakkudo/translation-static-analyzer/-/translation-static-analyzer-0.0.17.tgz#73066bd88a694eb448c0b9ee593ce3983a70e2df"
   dependencies:
     "@babel/runtime-corejs2" "^7.0.0"
     deep-equal "^1.0.1"
