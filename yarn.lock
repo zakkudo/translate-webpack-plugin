@@ -629,9 +629,9 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@zakkudo/translation-static-analyzer@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@zakkudo/translation-static-analyzer/-/translation-static-analyzer-0.0.17.tgz#73066bd88a694eb448c0b9ee593ce3983a70e2df"
+"@zakkudo/translation-static-analyzer@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@zakkudo/translation-static-analyzer/-/translation-static-analyzer-0.1.0.tgz#1b77dccc4223d131afb4c3e9fecac9e7378c6a38"
   dependencies:
     "@babel/runtime-corejs2" "^7.0.0"
     deep-equal "^1.0.1"
@@ -639,7 +639,6 @@
     glob "^7.1.2"
     json5 "^1.0.1"
     safe-eval "^0.4.1"
-    y18n "^4.0.0"
 
 abab@^2.0.0:
   version "2.0.0"
@@ -4759,10 +4758,6 @@ xmlcreate@^1.0.1:
 y18n@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-
-y18n@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
 
 yallist@^2.1.2:
   version "2.1.2"

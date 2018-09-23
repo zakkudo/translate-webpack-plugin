@@ -3,12 +3,14 @@
     "version": "0.0.14",
     "description": "A webpack plugin for generating localization files using static analysis of source files similar to gettext",
     "keywords": [
-        "webpack",
-        "translate",
+        "gettext",
         "i18n",
         "internationalization",
+        "l10n",
         "localization",
-        "l10n"
+        "localize",
+        "translate",
+        "webpack"
     ],
     "main": "index.js",
     "files": [
@@ -38,7 +40,7 @@
     },
     "dependencies": {
         "@babel/runtime-corejs2": "^7.0.0",
-        "@zakkudo/translation-static-analyzer": "^0.0.17",
+        "@zakkudo/translation-static-analyzer": "^0.1.0",
         "chokidar": "^2.0.4"
     },
     "scripts": {
