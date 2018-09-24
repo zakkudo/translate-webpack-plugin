@@ -40,7 +40,7 @@
     },
     "dependencies": {
         "@babel/runtime-corejs2": "^7.0.0",
-        "@zakkudo/translation-static-analyzer": "^0.2.0",
+        "@zakkudo/translation-static-analyzer": "^0.2.1",
         "chokidar": "^2.0.4"
     },
     "scripts": {
