@@ -11,10 +11,13 @@ A webpack plugin for scanning javscript files to build translation mappings in j
 ## Why use this?
 
 - You no longer have to manage hierarchies of translations
-- Templates are automatically generated for the translators
-- The translations are noted if they are new, unused and what files
-- It allows splitting the translations easily for dynamic imports to allow sliced loading
-- Any string wrapped in `__()` or `__n()`, will be picked up as a
+- Designed for architectures leveraging dynamic imports, allowing splitting of the translations based off of file structure
+- Templates are automatically generated for the translators where they only need to fill in the blanks
+- The translations are annoted if they are new or unused as well as the file names and line numbers of usages
+- Easy auditing for missing or non-updated translation strings with never running your application or enlisting QA
+- Any string wrapped in `__()` or `__n()` or `__p()` or `__np()`, will be picked up as a
+  translatable making usage extremely easy for developers
+- Works similarly to the venerable [gettext](https://en.wikipedia.org/wiki/Gettext).  Any translation strategies that work for that library work for this library.
   translatable making usage extremely easy for developers
 
 ## What does it do?
