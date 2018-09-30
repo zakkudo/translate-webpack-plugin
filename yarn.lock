@@ -629,9 +629,9 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@zakkudo/translation-static-analyzer@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@zakkudo/translation-static-analyzer/-/translation-static-analyzer-0.2.1.tgz#e34ed3f9a8421ba789d180db40173783b32b8f0f"
+"@zakkudo/translation-static-analyzer@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@zakkudo/translation-static-analyzer/-/translation-static-analyzer-0.2.2.tgz#16e58f2bb6518ca4c1ac1edb766fc2e6ace3bb8d"
   dependencies:
     "@babel/runtime-corejs2" "^7.0.0"
     deep-equal "^1.0.1"
@@ -3037,7 +3037,7 @@ json5@^0.5.0, json5@^0.5.1:
 
 json5@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
+  resolved "http://registry.npmjs.org/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
   dependencies:
     minimist "^1.2.0"
 

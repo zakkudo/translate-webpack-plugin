@@ -15,6 +15,6 @@ module.exports = {
         ["@babel/transform-runtime", {"corejs": 2}],
         "transform-undefined-to-void"
     ],
-    minified: true,
+    minified: false, // When enabled, makes debuggers confused even with source maps
     comments: false
 }
