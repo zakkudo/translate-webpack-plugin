@@ -84,15 +84,25 @@ File Structure
 Where `locales/fr.json` will look like this for use by your translators:
 ``` json5
 {
-    // NEW
-    // src/pages/AboutPage/index.js:14
-    "About": "",
-    // UNUSED
-    "Search Page": "French translation",
-    // src/pages/AboutPage/index.js:40
-    "There is one user": {"one":"French translation", "other":"French translation"},
-    // src/pages/AboutPage/index.js:38
-    "Welcome to the about page!": "French translation"
+    "About": {
+        // NEW
+        // src/pages/AboutPage/index.js:14
+        "default": ""
+    },
+    "Search": {
+        // UNUSED
+        "default": "French translation",
+        // UNUSED
+        "menuitem": "French translation"
+    },
+    "There is one user": {
+        // src/pages/AboutPage/index.js:40
+        "default": {"1":"French translation", "2":"French translation"},
+    },
+    "Welcome to the about page!": {
+        // src/pages/AboutPage/index.js:38
+        "default": "French translation"
+    }
 }
 ```
 
