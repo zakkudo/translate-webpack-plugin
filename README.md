@@ -10,6 +10,7 @@ A webpack plugin for scanning javscript files to build translation mappings in j
 
 ## Why use this?
 
+- Automated code splittiing
 - You no longer have to manage hierarchies of translations
 - Designed for architectures leveraging dynamic imports, allowing splitting of the translations based off of file structure
 - Templates are automatically generated for the translators where they only need to fill in the blanks

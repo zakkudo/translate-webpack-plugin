@@ -1,11 +1,9 @@
 language: node_js
 cache: yarn
 node_js:
-  - "6"
-#  - "7" NOT SUPPORTED BY fs-extra
   - "8"
-  - "9"
   - "10"
+  - "11"
 install:
     - yarn add --dev codecov snyk coveralls
 script:
