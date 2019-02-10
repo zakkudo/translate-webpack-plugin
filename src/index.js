@@ -22,7 +22,7 @@ function update(compiler) {
 
     if (!this.watcher) {
         const templateDirectory = this.analyzer.templateDirectory;
-        const templatesFilePattern = path.resolve(templateDirectory, '*.json');
+        const templatesFilePattern = path.resolve(templateDirectory, '*');
 
         this.watcher = chokidar.watch(templatesFilePattern)
             .on('add', writeTemplates.bind(this))
