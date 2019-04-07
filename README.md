@@ -229,6 +229,7 @@ localization templates.
 | options | <code>Object</code> |  | The modifiers for how the analyzer is run |
 | options.files | <code>String</code> |  | A [glob pattern](https://www.npmjs.com/package/glob) of the files to pull translations from |
 | [options.debug] | <code>Boolean</code> | <code>false</code> | Show debugging information in the console |
+| [options.format] | <code>String</code> | <code>&#x27;po&#x27;</code> | The format for the template files.  One of [po, json, json5] |
 | [options.locales] | <code>Array.&lt;String&gt;</code> | <code>[]</code> | The locales to generate (eg fr, ja_JP, en) |
 | [options.templates] | <code>String</code> |  | The location to store the translator translatable templates for each language. Defaults to making a `locales` directory in the current working directory |
 | [options.target] | <code>String</code> |  | Where to write the final translations, which can be split between multiple directories for modularity. If there are no targets, no `.locales` directory will be generated anywhere. |
